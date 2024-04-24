@@ -1,5 +1,5 @@
 import express from "express"
-import { getInfo } from "./database.js"
+// import { getInfo } from "./database.js"
 import path from "path"
 import { getGlobals } from 'common-es';
 
@@ -8,10 +8,10 @@ const { __dirname, __filename } = getGlobals(import.meta.url);
 // Now you can use __dirname and __filename as usual
 
 const app = express()
-const port= 8080;
+const port = 8080;
 app.use(express.static(path.join(__dirname, '..')));
 
-app.get("/users", async (req,res)=>{
+app.get("/users", async (req,res)=> {
     try {
         const info = await getInfo();
         res.json(info);
@@ -24,6 +24,6 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!')
   })
 
-  app.listen(8080, ()=>{
-    console.log("Server is running on port 8080 at http://localhost:8080")
+  app.listen(port, ()=>{
+    console.log(`Server is running on port ${port} at http://localhost:${port}`)
   })
