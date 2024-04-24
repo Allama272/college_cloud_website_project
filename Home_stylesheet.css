@@ -79,6 +79,7 @@ body{
   }
 .btn {
     background: none;
+    font-family: prime;
     border: none;
     text-align: center;
     font-size: 1rem;
@@ -167,7 +168,7 @@ label {
     width:70px;
     height:40px;
     position: absolute;
-    top: 5px;
+    top: 30px;
     right: 50px;
         display: block;
         background: black;
