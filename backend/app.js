@@ -1,5 +1,5 @@
 import express from "express"
-// import { getInfo } from "./database.js"
+import { getInfo } from "./database.js"
 import path from "path"
 import { getGlobals } from 'common-es';
 

@@ -1,16 +1,21 @@
-// import mysql from 'mysql2'
+import mysql from 'mysql2'
 
-// const pool = mysql.createPool({
-//     host:"localhost",
-//     user:"root",
-//     password:"",
-//     database:"team_info"
-// }).promise()
+const pool = mysql.createPool({
+    host : 'mysql',
+    user:'root',
+    password: 'root',
+    database: 'team_db'
+}).promise()
 
-// export async function getInfo(){
-// const [result] = await pool.query("SELECT * FROM users")
-// return result
-// }
-// const info= await getInfo()
-// console.log(info)
+export async function getInfo(){
+try{
+const [result] = await pool.query("SELECT * FROM students")
+return result}
+catch(error){
+    console.error(error);
+    return null
+}
+}
+const info= await getInfo()
+console.log(info)
 
