@@ -12,6 +12,8 @@ services:
       # Add other environment variables as needed
     ports:
       - 8080:8080  # Replace 3000 with your desired port for the web app
+    volumes:
+      - app_data:/app/data
     depends_on:
       - mysql
 
@@ -20,3 +22,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
+    volumes:
+      - mysql-data:/var/lib/MySQL
+volumes:
+  mysql-data:
+  app_data:
