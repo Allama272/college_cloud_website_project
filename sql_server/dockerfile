@@ -1,6 +1,5 @@
 FROM mysql:latest
 
-# Create the target database during container startup
 COPY ./db.sql /docker-entrypoint-initdb.d/ 
 
 ENV MYSQL_ROOT_PASSWORD=root
