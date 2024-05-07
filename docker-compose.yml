@@ -2,23 +2,22 @@ version: '3.8'
 
 services:
   web:
-    build: .  # Replace with path to your project directory if different
+    build: .  
     restart: always
     environment:
       - DB_HOST= 'mysql' 
-      - DB_USER= 'root'  # Replace with your actual username
-      - DB_PASSWORD= 'root'  # Replace with your actual password
+      - DB_USER= 'root'  
+      - DB_PASSWORD= 'root'  
       - DB_DATABASE= 'team_db'
-      # Add other environment variables as needed
     ports:
-      - 8080:8080  # Replace 3000 with your desired port for the web app
+      - 8080:8080  
     volumes:
       - app_data:/app/data
     depends_on:
       - mysql
 
   mysql:
-    build: ./sql_server/  # Adjust path if your Dockerfile is elsewhere
+    build: ./sql_server/  
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'root'

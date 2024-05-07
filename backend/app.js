@@ -5,7 +5,6 @@ import { getGlobals } from 'common-es';
 
 const { __dirname, __filename } = getGlobals(import.meta.url);
 
-// Now you can use __dirname and __filename as usual
 
 const app = express()
 const port = 8080;
